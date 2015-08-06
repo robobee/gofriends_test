@@ -1,0 +1,18 @@
+<h3>Reservation:</h3>
+
+<table class="table">
+  <tr>
+    <th>Table #</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>Edit</th>
+    <th>Destroy</th>
+  </tr>
+  <tr>
+    <td><%= @reservation.table_number %></td>
+    <td><%= @reservation.start_time %></td>
+    <td><%= @reservation.end_time %></td>
+    <td><%= link_to("Edit", edit_reservation_path(@reservation)) %></td>
+    <td><%= link_to('Delete', reservation_path(@reservation), :method => :delete) %></td>
+  </tr>
+</table>

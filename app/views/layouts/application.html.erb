@@ -8,7 +8,23 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+
+  <ul class="nav nav-pills" style="margin-top: 2em">
+    <li role="presentation">
+      <%= link_to("Reservations", reservations_path) %>
+    </li>
+    <li role="presentation">
+      <%= link_to("Create Reservations", new_reservation_path) %>
+    </li>
+  </ul>
+
+  <% if flash[:message] %>
+    <div class="alert alert-success"><%= flash[:message] %></div>
+  <% end %>
+
+  <%= yield %>
+</div>
 
 </body>
 </html>

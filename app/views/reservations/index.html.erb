@@ -1,11 +1,11 @@
-<p> This is index view of reservations </p>
-
 <h3>Current reservations</h3>
-<table>
+<table class="table">
   <tr>
     <th>Table #</th>
     <th>Start Time</th>
     <th>End Time</th>
+    <th>View</th>
+    <th>Edit</th>
   </tr>
 
   <% if @reservations %>
@@ -14,6 +14,8 @@
       <td><%= res.table_number %></td>
       <td><%= res.start_time %></td>
       <td><%= res.end_time %></td>
+      <td><%= link_to("View", reservation_path(res)) %></td>
+      <td><%= link_to("Edit", edit_reservation_path(res)) %></td>
     </tr>
     <% end %>
   <% end %>

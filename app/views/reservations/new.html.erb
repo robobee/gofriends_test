@@ -1,0 +1,24 @@
+<h3>New reservation form:</h3>
+
+<%= form_for(@reservation) do |f| %>
+  
+  <%= render 'shared/error_messages' %>
+
+  <div class="form-group">
+    <%= f.label :table_number %>
+    <%= f.number_field :table_number %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :end_time %>
+    <%= f.datetime_select :end_time %>
+  </div>
+
+  <%= f.submit "Create", class: "btn btn-default" %>
+
+<% end %>

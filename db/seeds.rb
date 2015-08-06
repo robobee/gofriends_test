@@ -8,13 +8,13 @@
 
 r = Random.new
 
-10.times do
-  start_time = Faker::Time.between(DateTime.now - 1, DateTime.now)
-  end_time = Faker::Time.between(DateTime.now - 1, DateTime.now)
-  
-  Reservation.create(
-    table_number: r.rand(3) + 1,
-    start_time: start_time,
-    end_time: end_time
-  )
+5.times do |t|
+  start = DateTime.now
+  5.times do |offset|
+    Reservation.create(
+      table_number: t + 1,
+      start_time: start.in(offset * 3600),
+      end_time: start.in(3600 + offset * 3600)
+    )
+  end
 end
