@@ -1,0 +1,20 @@
+<p> This is index view of reservations </p>
+
+<h3>Current reservations</h3>
+<table>
+  <tr>
+    <th>Table #</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+  </tr>
+
+  <% if @reservations %>
+    <% @reservations.each do |res| %>
+    <tr>
+      <td><%= res.table_number %></td>
+      <td><%= res.start_time %></td>
+      <td><%= res.end_time %></td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
